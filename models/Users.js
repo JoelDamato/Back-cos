@@ -8,15 +8,7 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   cursos: { 
     type: [String], 
-    enum: [
-      "Focus", 
-      "Master Fade", 
-      "Cutting Mastery", 
-      "Colorimetria", 
-      "GROWTH BARBER", 
-      "REGALO DE LANZAMIENTO", 
-      "Cupon"
-    ] 
+    enum: ["Focus Dental"] 
   },
   rol: {
     type: String,
