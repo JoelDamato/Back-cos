@@ -6,6 +6,13 @@ const obtenerTodosLosClicks = require("../controllers/getclick.js");
 const registrarProgreso = require("../controllers/progrescontroller.js");
 const obtenerProgresoPorUsuario = require("../controllers/getprogres.js");
 const crearLinkDePago = require("../controllers/paymentmp.js");
+const { guardarForm, obtenerForm } = require("../controllers/forms.js");
+
+
+
+// forms
+router.post("/form", guardarForm);
+router.get("/form", obtenerForm);
 
 // Clicks
 router.post("/clicks", registrarClick);

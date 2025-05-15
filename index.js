@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config(); // Importar dotenv para manejar variables de entorno
 
+
 const bancoRoutes = require('./routes/bancorout');
 const loginRoutes = require('./routes/loginrout');
 const createRoutes = require('./routes/createusers');
@@ -17,7 +18,8 @@ const clickRoutes = require("./routes/clickrout");
 // Configuración de la app
 const app = express();
 app.use(cors()); // Permitir acceso desde cualquier origen (CORS liberado)
-app.use(express.json());
+app.use(express.json({ limit: '20mb' }));
+app.use(express.urlencoded({ extended: true, limit: '20mb' }));
 
 // Conectar con MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
